@@ -1,245 +1,221 @@
 {
-    "name": "fullhunt",
-    "version": "1.0.0",
-    "label": "Fullhunt",
-    "description": "FullHunt enables companies to discover all of their attack surfaces,monitor them for exposure,and continuously scan them for the latest security vulnerabilities.",
-    "publisher": "spryIQ.co",
-    "icon_small_name": "small.png",
-    "icon_large_name": "large.png",
-    "cs_compatible": true,
-    "cs_approved": false,
-    "category": "Vulnerability and Risk Management",
-    "help_online": "https://github.com/jitesh-spryiq/connector-fullhunt/blob/develop/docs/FullHuntConnectorDoc.md",
-    "configuration": {
-        "fields": [
-            {
-                "title": "Server URL",
-                "type": "text",
-                "description": "Specify the URL of the fullhunt server to connect and perform automated operations.",
-                "tooltip": "Specify the URL of the fullhunt server to connect and perform automated operations.",
-                "name": "server_url",
-                "required": true,
-                "visible": true,
-                "editable": true,
-                "value": "",
-                "placeholder": "e.g: https://fullhunt.io or fullhunt.io"
-            },
-            {
-                "title": "API key",
-                "type": "password",
-                "description": "Specify the API key to access the endpoint to which you will connect and perform the automated operations.",
-                "tooltip": "Specify the API key to access the endpoint to which you will connect and perform the automated operations.",
-                "name": "api_key",
-                "required": true,
-                "visible": true,
-                "editable": true,
-                "value": "",
-                "placeholder": "e.g:yMlmghnnE9CApiAwLNHJFlN0VofZVnUnaaaHT"
-            }
-        ]
-    },
-    "operations": [
-        {
-            "title": "Get Domain Details",
-            "operation": "get_domain_details",
-            "description": "Get domain details, subdomains,associated hosts,DNS records,exposed ports,and more.",
-            "annotation": "get_domain_details",
-            "category": "investigation",
-            "parameters": [
-                {
-                    "title": "Domain",
-                    "type": "text",
-                    "name": "domain",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": "",
-                    "placeholder": "e.g:google.com",
-                    "description": "Specify the domain that you want to retrieve from fullhunt.",
-                    "tooltip": "Specify the domain that you want to retrieve from fullhunt."
-                }
-            ],
-            "output_schema": [
-                {
-                    "domain": "",
-                    "hosts": [
-                        {
-                            "cdn": "",
-                            "cloud": {
-                                "provider": "",
-                                "region": ""
-                            },
-                            "dns": {
-                                "a": [],
-                                "aaaa": "",
-                                "cname": [],
-                                "mx": "",
-                                "ns": "",
-                                "ptr": [],
-                                "txt": ""
-                            },
-                            "domain": "",
-                            "has_ipv6": "",
-                            "has_private_ip": "",
-                            "host": "",
-                            "http_status_code": "",
-                            "http_title": "",
-                            "ip_address": "",
-                            "ip_metadata": {
-                                "asn": "",
-                                "city_name": "",
-                                "country_code": "",
-                                "country_name": "",
-                                "isp": "",
-                                "location_latitude": "",
-                                "location_longitude": "",
-                                "organization": "",
-                                "postal_code": "",
-                                "region": ""
-                            },
-                            "is_cdn": "",
-                            "is_cloud": "",
-                            "is_cloudflare": "",
-                            "is_live": "",
-                            "is_resolvable": "",
-                            "network_ports": [],
-                            "tags": [],
-                            "tld": ""
-                        }
-                    ],
-                    "status": "",
-                    "message": "",
-                    "metadata": {
-                        "all_results_count": "",
-                        "available_results_for_user": "",
-                        "domain": "",
-                        "last_scanned": "",
-                        "max_results_for_user": "",
-                        "timestamp": "",
-                        "user_plan": ""
-                    }
-                }
-            ]
-        },
-        {
-            "title": "Get Subdomains of Domain",
-            "operation": "get_subdomain_of_domain",
-            "description": "List all discovered subdomains,hosts for a given domain.",
-            "annotation": "get_subdomain_of_domain",
-            "category": "investigation",
-            "parameters": [
-                {
-                    "title": "Domain",
-                    "type": "text",
-                    "name": "domain",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": "",
-                    "placeholder": "e.g:google.com",
-                    "description": "Specify the domain that you want to retrieve from fullhunt.",
-                    "tooltip": "Specify the domain that you want to retrieve from fullhunt."
-                }
-            ],
-            "output_schema": [
-                {
-                    "domain": "",
-                    "hosts": [
-                        "",
-                        "",
-                        ""
-                    ],
-                    "status": "",
-                    "message": "",
-                    "metadata": {
-                        "all_results_count": "",
-                        "available_results_for_user": "",
-                        "domain": "",
-                        "last_scanned": "",
-                        "max_results_for_user": "",
-                        "timestamp": "",
-                        "user_plan": ""
-                    }
-                }
-            ]
-        },
-        {
-            "title": "Get details of a specific host",
-            "operation": "get_specific_host_details",
-            "description": "List of endpoint and retrieves details for a given host.",
-            "annotation": "get_specific_host_details",
-            "category": "investigation",
-            "parameters": [
-                {
-                    "title": "Host",
-                    "type": "text",
-                    "name": "host",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": "",
-                    "placeholder": "e.g:google.com",
-                    "description": "Specify the host that you want to retrieve from fullhunt.",
-                    "tooltip": "Specify the host that you want to retrieve from fullhunt."
-                }
-            ],
-            "output_schema": [
-                {
-                    "cdn": "",
-                    "cloud": {
-                        "provider": "",
-                        "region": ""
-                    },
-                    "dns": {
-                        "a": [
-                            ""
-                        ],
-                        "aaaa": "",
-                        "cname": [
-                            ""
-                        ],
-                        "mx": "",
-                        "ns": "",
-                        "ptr": [
-                            ""
-                        ],
-                        "txt": ""
-                    },
-                    "domain": "",
-                    "has_ipv6": "",
-                    "has_private_ip": "",
-                    "host": "",
-                    "http_status_code": "",
-                    "http_title": "",
-                    "ip_address": "",
-                    "ip_metadata": {
-                        "asn": "",
-                        "city_name": "",
-                        "country_code": "",
-                        "country_name": "",
-                        "isp": "",
-                        "location_latitude": "",
-                        "location_longitude": "",
-                        "organization": "",
-                        "postal_code": "",
-                        "region": ""
-                    },
-                    "is_cdn": "",
-                    "is_cloud": "",
-                    "is_cloudflare": "",
-                    "is_live": "",
-                    "is_resolvable": "",
-                    "network_ports": [],
-                    "tags": [
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "tld": ""
-                }
-            ]
-        }
+  "name": "fullhunt",
+  "version": "1.0.0",
+  "label": "Fullhunt",
+  "description": "FullHunt enables companies to discover all of their attack surfaces, monitor them for exposure and continuously scan them for the latest security vulnerabilities.",
+  "publisher": "Fortinet",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "cs_compatible": true,
+  "cs_approved": true,
+  "category": "Vulnerability and Risk Management",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "description": "Specify the URL of the Fullhunt server to connect and perform the automated operations.",
+        "tooltip": "Specify the URL of the Fullhunt server to connect and perform the automated operations.",
+        "name": "server_url",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "value": "https://fullhunt.io"
+      },
+      {
+        "title": "API Key",
+        "type": "password",
+        "description": "Specify the API Key to access the Fullhunt server to connect and perform the automated operations.",
+        "tooltip": "Specify the API Key to access the Fullhunt server to connect and perform the automated operations.",
+        "name": "api_key",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "value": ""
+      }
     ]
+  },
+  "operations": [
+    {
+      "title": "Get Domain Details",
+      "operation": "get_domain_details",
+      "description": "Retrieves the domain details, subdomains, associated hosts, DNS records, exposed ports and more for the domain that you have specified.",
+      "annotation": "get_domain_details",
+      "category": "investigation",
+      "parameters": [
+        {
+          "title": "Domain",
+          "type": "text",
+          "name": "domain",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "placeholder": "e.g: google.com",
+          "description": "Specify the domain whose details you want to retrieve from Fullhunt.",
+          "tooltip": "Specify the domain whose details you want to retrieve from Fullhunt."
+        }
+      ],
+      "output_schema": {
+        "domain": "",
+        "hosts": [
+          {
+            "cdn": "",
+            "cloud": {
+              "provider": "",
+              "region": ""
+            },
+            "dns": {
+              "a": [],
+              "aaaa": "",
+              "cname": [],
+              "mx": "",
+              "ns": "",
+              "ptr": [],
+              "txt": ""
+            },
+            "domain": "",
+            "has_ipv6": "",
+            "has_private_ip": "",
+            "host": "",
+            "http_status_code": "",
+            "http_title": "",
+            "ip_address": "",
+            "ip_metadata": {
+              "asn": "",
+              "city_name": "",
+              "country_code": "",
+              "country_name": "",
+              "isp": "",
+              "location_latitude": "",
+              "location_longitude": "",
+              "organization": "",
+              "postal_code": "",
+              "region": ""
+            },
+            "is_cdn": "",
+            "is_cloud": "",
+            "is_cloudflare": "",
+            "is_live": "",
+            "is_resolvable": "",
+            "network_ports": [],
+            "tags": [],
+            "tld": ""
+          }
+        ],
+        "status": "",
+        "message": "",
+        "metadata": {
+          "all_results_count": "",
+          "available_results_for_user": "",
+          "domain": "",
+          "last_scanned": "",
+          "max_results_for_user": "",
+          "timestamp": "",
+          "user_plan": ""
+        }
+      }
+    },
+    {
+      "title": "Get Subdomains of Domain",
+      "operation": "get_subdomain_of_domain",
+      "description": "List all discovered subdomains,hosts for a given domain.",
+      "annotation": "get_subdomain_of_domain",
+      "category": "investigation",
+      "parameters": [
+        {
+          "title": "Domain",
+          "type": "text",
+          "name": "domain",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "placeholder": "e.g: google.com",
+          "description": "Specify the domain whose details you want to retrieve from Fullhunt.",
+          "tooltip": "Specify the domain whose details you want to retrieve from Fullhunt."
+        }
+      ],
+      "output_schema": {
+        "domain": "",
+        "hosts": [],
+        "status": "",
+        "message": "",
+        "metadata": {
+          "all_results_count": "",
+          "available_results_for_user": "",
+          "domain": "",
+          "last_scanned": "",
+          "max_results_for_user": "",
+          "timestamp": "",
+          "user_plan": ""
+        }
+      }
+    },
+    {
+      "title": "Get details of a specific host",
+      "operation": "get_specific_host_details",
+      "description": "Retrieves details for a given host.",
+      "annotation": "get_specific_host_details",
+      "category": "investigation",
+      "parameters": [
+        {
+          "title": "Host",
+          "type": "text",
+          "name": "host",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "placeholder": "e.g: google.com",
+          "description": "Specify the host whose details you want to retrieve from Fullhunt.",
+          "tooltip": "Specify the host whose details you want to retrieve from Fullhunt."
+        }
+      ],
+      "output_schema": {
+        "cdn": "",
+        "cloud": {
+          "provider": "",
+          "region": ""
+        },
+        "dns": {
+          "a": [],
+          "aaaa": "",
+          "cname": [],
+          "mx": "",
+          "ns": "",
+          "ptr": [],
+          "txt": ""
+        },
+        "domain": "",
+        "has_ipv6": "",
+        "has_private_ip": "",
+        "host": "",
+        "http_status_code": "",
+        "http_title": "",
+        "ip_address": "",
+        "ip_metadata": {
+          "asn": "",
+          "city_name": "",
+          "country_code": "",
+          "country_name": "",
+          "isp": "",
+          "location_latitude": "",
+          "location_longitude": "",
+          "organization": "",
+          "postal_code": "",
+          "region": ""
+        },
+        "is_cdn": "",
+        "is_cloud": "",
+        "is_cloudflare": "",
+        "is_live": "",
+        "is_resolvable": "",
+        "network_ports": [],
+        "tags": [],
+        "tld": ""
+      }
+    }
+  ]
 }
