@@ -1,7 +1,7 @@
 {
   "name": "fullhunt",
   "version": "1.0.0",
-  "label": "Fullhunt",
+  "label": "FullHunt",
   "description": "FullHunt enables companies to discover all of their attack surfaces, monitor them for exposure and continuously scan them for the latest security vulnerabilities.",
   "publisher": "Fortinet",
   "icon_small_name": "small.png",
@@ -33,6 +33,16 @@
         "visible": true,
         "editable": true,
         "value": ""
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
       }
     ]
   },
@@ -118,7 +128,7 @@
       }
     },
     {
-      "title": "Get Subdomains of Domain",
+      "title": "Get Subdomains of a Domain",
       "operation": "get_subdomain_of_domain",
       "description": "List all discovered subdomains,hosts for a given domain.",
       "annotation": "get_subdomain_of_domain",
@@ -133,8 +143,8 @@
           "editable": true,
           "value": "",
           "placeholder": "e.g: google.com",
-          "description": "Specify the domain whose details you want to retrieve from Fullhunt.",
-          "tooltip": "Specify the domain whose details you want to retrieve from Fullhunt."
+          "description": "Specify the domain whose subdomains you want to retrieve from Fullhunt.",
+          "tooltip": "Specify the domain whose subdomains you want to retrieve from Fullhunt."
         }
       ],
       "output_schema": {
@@ -154,7 +164,7 @@
       }
     },
     {
-      "title": "Get details of a specific host",
+      "title": "Get Details of a Specific Host",
       "operation": "get_specific_host_details",
       "description": "Retrieves details for a given host.",
       "annotation": "get_specific_host_details",

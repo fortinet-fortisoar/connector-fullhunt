@@ -19,6 +19,7 @@ class FullHunt(object):
             self.server_url = 'https://{0}'.format(self.server_url)
         if self.server_url.endswith('/'):
             self.server_url = self.server_url[:-1]
+        self.verify_ssl = config.get("verify_ssl")
 
     def make_api_call(self, endpoint=None, method='GET', headers=None, health_check=False):
         url = self.server_url + endpoint
@@ -26,7 +27,7 @@ class FullHunt(object):
             self.headers.update(headers)
         try:
             logger.debug('Making a request with {0} - {1} and headers - {2}'.format(method, url, self.headers))
-            response = requests.request(method, url, headers=self.headers)
+            response = requests.request(method, url, headers=self.headers, verify=self.verify_ssl)
             if health_check and response.status_code == 200:
                 return response
             elif response.status_code in (200, 400, 404):
@@ -34,6 +35,9 @@ class FullHunt(object):
                     return response.json()
                 except Exception:
                     raise ConnectorError({'status_code': str(response.status_code), 'response': response.content})
+            elif response.status_code == 429:
+                raise ConnectorError(
+                    {'status': 'Failure', 'status_code': str(response.status_code), 'response': "Too Many Requests - API Rate Limit Exceeded"})
             else:
                 logger.error('Failed with response {0}'.format(response))
                 raise ConnectorError(
