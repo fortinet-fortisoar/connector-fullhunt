@@ -2,16 +2,16 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "82e81241-1a34-4dac-ae15-ba06ae63ff16",
+      "uuid": "0ade22f8-717d-4d8a-8b64-1ea27c5df636",
       "@type": "WorkflowCollection",
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "62311f0b-f5cd-4b92-a29d-78285aa73d73",
-          "collection": "/api/3/workflow_collections/82e81241-1a34-4dac-ae15-ba06ae63ff16",
+          "uuid": "faa83edf-da20-4fb0-8975-1e31943cca44",
+          "collection": "/api/3/workflow_collections/0ade22f8-717d-4d8a-8b64-1ea27c5df636",
           "steps": [
             {
-              "uuid": "f1562db5-dd45-463e-951a-625521224c70",
+              "uuid": "b64bcc5e-c87b-4f9b-94e2-4931d02c8957",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -28,13 +28,13 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "623bf225-9fc9-4ab8-a7f3-67de56471cba",
+              "uuid": "4d3cf0bd-ba10-4ef8-9a8e-01662e44bfd6",
               "@type": "WorkflowStep",
               "name": "Get Domain Details",
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Fullhunt",
+                "name": "FullHunt",
                 "config": "''",
                 "params": {
                   "domain": ""
@@ -52,7 +52,7 @@
           "triggerLimit": null,
           "description": "Retrieves the domain details, subdomains, associated hosts, DNS records, exposed ports and more for the domain that you have specified.",
           "name": "Get Domain Details",
-          "tag": "#Fullhunt",
+          "tag": "#FullHunt",
           "recordTags": [
             "Fullhunt",
             "fullhunt"
@@ -62,26 +62,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/f1562db5-dd45-463e-951a-625521224c70",
+          "triggerStep": "/api/3/workflow_steps/b64bcc5e-c87b-4f9b-94e2-4931d02c8957",
           "routes": [
             {
-              "uuid": "6c301de2-9c62-4e71-aaf4-fe1c99199ce0",
+              "uuid": "6368a48a-710a-4005-9efa-e02f6746c62a",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Domain Details",
-              "sourceStep": "/api/3/workflow_steps/f1562db5-dd45-463e-951a-625521224c70",
-              "targetStep": "/api/3/workflow_steps/623bf225-9fc9-4ab8-a7f3-67de56471cba"
+              "sourceStep": "/api/3/workflow_steps/b64bcc5e-c87b-4f9b-94e2-4931d02c8957",
+              "targetStep": "/api/3/workflow_steps/4d3cf0bd-ba10-4ef8-9a8e-01662e44bfd6"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "78567251-ca4d-409b-8578-70e28dd2bb40",
-          "collection": "/api/3/workflow_collections/82e81241-1a34-4dac-ae15-ba06ae63ff16",
+          "uuid": "045bc7e9-6e67-4ed3-8024-b83812489047",
+          "collection": "/api/3/workflow_collections/0ade22f8-717d-4d8a-8b64-1ea27c5df636",
           "steps": [
             {
-              "uuid": "a6ccb802-b43a-43d6-949d-e70d6d368b09",
+              "uuid": "1d9c943d-8262-4f5a-b082-83d20b55290c",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -98,13 +98,13 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "84560a19-2772-4352-9714-afee389e4eda",
+              "uuid": "a2e8581c-bc7c-4fe5-95d8-334f49084127",
               "@type": "WorkflowStep",
-              "name": "Get Subdomains of Domain",
+              "name": "Get Subdomains of a Domain",
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Fullhunt",
+                "name": "FullHunt",
                 "config": "''",
                 "params": {
                   "domain": ""
@@ -112,7 +112,7 @@
                 "version": "1.0.0",
                 "connector": "fullhunt",
                 "operation": "get_subdomain_of_domain",
-                "operationTitle": "Get Subdomains of Domain"
+                "operationTitle": "Get Subdomains of a Domain"
               },
               "left": "188",
               "top": "120",
@@ -121,8 +121,8 @@
           ],
           "triggerLimit": null,
           "description": "List all discovered subdomains,hosts for a given domain.",
-          "name": "Get Subdomains of Domain",
-          "tag": "#Fullhunt",
+          "name": "Get Subdomains of a Domain",
+          "tag": "#FullHunt",
           "recordTags": [
             "Fullhunt",
             "fullhunt"
@@ -132,26 +132,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/a6ccb802-b43a-43d6-949d-e70d6d368b09",
+          "triggerStep": "/api/3/workflow_steps/1d9c943d-8262-4f5a-b082-83d20b55290c",
           "routes": [
             {
-              "uuid": "a4e2b6ba-8259-41f2-9321-e459d9190f8c",
+              "uuid": "b96c9589-191a-49db-bf7e-135ea03cff5d",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Subdomains of Domain",
-              "sourceStep": "/api/3/workflow_steps/a6ccb802-b43a-43d6-949d-e70d6d368b09",
-              "targetStep": "/api/3/workflow_steps/84560a19-2772-4352-9714-afee389e4eda"
+              "name": "Start-> Get Subdomains of a Domain",
+              "sourceStep": "/api/3/workflow_steps/1d9c943d-8262-4f5a-b082-83d20b55290c",
+              "targetStep": "/api/3/workflow_steps/a2e8581c-bc7c-4fe5-95d8-334f49084127"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "a78c8167-2054-4645-bbcc-470f40c6824f",
-          "collection": "/api/3/workflow_collections/82e81241-1a34-4dac-ae15-ba06ae63ff16",
+          "uuid": "9778fbc1-447b-48cd-9f4d-de94eb4272a2",
+          "collection": "/api/3/workflow_collections/0ade22f8-717d-4d8a-8b64-1ea27c5df636",
           "steps": [
             {
-              "uuid": "8530b58f-4b62-4525-8ad3-a093eefb67e2",
+              "uuid": "11ccdffc-4d6e-444c-ba40-453736b06e62",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -168,13 +168,13 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "516f537f-85a9-43aa-9288-0650348e11b7",
+              "uuid": "995d443d-c727-476f-bb7c-5b488977463e",
               "@type": "WorkflowStep",
-              "name": "Get details of a specific host",
+              "name": "Get Details of a Specific Host",
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Fullhunt",
+                "name": "FullHunt",
                 "config": "''",
                 "params": {
                   "host": ""
@@ -182,7 +182,7 @@
                 "version": "1.0.0",
                 "connector": "fullhunt",
                 "operation": "get_specific_host_details",
-                "operationTitle": "Get details of a specific host"
+                "operationTitle": "Get Details of a Specific Host"
               },
               "left": "188",
               "top": "120",
@@ -191,8 +191,8 @@
           ],
           "triggerLimit": null,
           "description": "Retrieves details for a given host.",
-          "name": "Get details of a specific host",
-          "tag": "#Fullhunt",
+          "name": "Get Details of a Specific Host",
+          "tag": "#FullHunt",
           "recordTags": [
             "Fullhunt",
             "fullhunt"
@@ -202,21 +202,21 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/8530b58f-4b62-4525-8ad3-a093eefb67e2",
+          "triggerStep": "/api/3/workflow_steps/11ccdffc-4d6e-444c-ba40-453736b06e62",
           "routes": [
             {
-              "uuid": "0b986fcf-cc70-4901-b176-79732259280c",
+              "uuid": "07fa8877-5123-49e3-b7e4-e001f80d36e0",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get details of a specific host",
-              "sourceStep": "/api/3/workflow_steps/8530b58f-4b62-4525-8ad3-a093eefb67e2",
-              "targetStep": "/api/3/workflow_steps/516f537f-85a9-43aa-9288-0650348e11b7"
+              "name": "Start-> Get Details of a Specific Host",
+              "sourceStep": "/api/3/workflow_steps/11ccdffc-4d6e-444c-ba40-453736b06e62",
+              "targetStep": "/api/3/workflow_steps/995d443d-c727-476f-bb7c-5b488977463e"
             }
           ]
         }
       ],
-      "name": "Sample - Fullhunt - 1.0.0",
+      "name": "Sample - FullHunt - 1.0.0",
       "description": "FullHunt enables companies to discover all of their attack surfaces, monitor them for exposure and continuously scan them for the latest security vulnerabilities.",
       "visible": true,
       "recordTags": [
